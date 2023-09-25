@@ -9,6 +9,9 @@ all: Makefile.coq
 quick: Makefile.coq
 	$(MAKE) -f Makefile.coq quick
 
+install: all Makefile.coq
+	$(MAKE) -f Makefile.coq install
+
 Makefile.coq: Makefile $(COQTHEORIES)
 	(echo "-R . $(COQMODULE)"; \
    echo $(COQTHEORIES)) > _CoqProject
